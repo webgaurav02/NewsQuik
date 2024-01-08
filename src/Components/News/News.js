@@ -48,7 +48,7 @@ export default class News extends Component {
     const getArticles1 = async () => {
       this.setState({ isLoading: true });
       try {
-        let url_1 = `https://newsdata.io/api/1/news?apikey=${this.API_KEY_1}&language=en&country=in&category=top`;
+        let url_1 = `https://newsdata.io/api/1/news?apikey=${this.API_KEY_1}&language=en&country=in&category=top&size=9`;
         let data_1 = await fetch(url_1);
         let parsedData_1 = await data_1.json();
         this.setState(
