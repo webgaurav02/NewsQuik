@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+.head-news a{
+    text-decoration: none;
+}
+
 .rightnews-top{
     height: 50%;
 }

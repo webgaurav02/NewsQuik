@@ -1,5 +1,7 @@
 .card{
+    margin: 0 auto;
     height: 90%;
+    /* width: 90%; */
 }
 
 .card-body{
@@ -10,6 +12,11 @@
     font-weight: 600;
 }
 
+.card-body p{
+    font-weight: 300;
+}
+
+
 .news-click{
     text-decoration: none;
     color: black;
@@ -17,7 +24,7 @@
 }
 
 .card-img-top{
-    height: 180px;
+    height: 200px;
 }
 
 .lines-1 {
@@ -34,4 +41,16 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 768px) {
+    .card{
+        height: fit-content;
+        width: 100%;
+    }
+
+    .card-img-top{
+        height: 180px;
+    }
+    
 }

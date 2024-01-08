@@ -1,7 +1,7 @@
 .App {
   padding-top: 40px;
   text-align: center;
-  background-color: #e5e5f7;
-  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-color: #ffffff;
+  /* background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px); */
   background-size: 10px 10px;
 }
