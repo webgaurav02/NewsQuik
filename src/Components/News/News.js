@@ -2,14 +2,14 @@ import { Component } from "react";
 import NewsItem from "../NewsItem/NewsItem";
 import HeaderNews from "../HeaderNews/HeaderNews";
 import "./News.css";
-import articles_json from "../../sample.json"
+// import articles_json from "../../sample.json"
 
 
 
 export default class News extends Component {
 
-  API_KEY_1 = 'pub_35917f023407a531a3936e1eacf8def474cd6';
-  API_KEY_2 = 'pub_360447372493ecd799677cd991f8d8e496c1a';
+  API_KEY_1 = process.env.REACT_APP_NEWS_API_1;
+  API_KEY_2 = process.env.REACT_APP_NEWS_API_2;
 
   constructor() {
     super();
@@ -42,30 +42,27 @@ export default class News extends Component {
   }
 
 
-  // `https://newsdata.io/api/1/news?apikey=${this.API_KEY_1}&language=en&country=in&category=top`
-  // `https://newsdata.io/api/1/news?apikey=${this.API_KEY_2}&language=en`
-
 
   componentDidMount() {
 
     const getArticles1 = async () => {
       this.setState({ isLoading: true });
       try {
-        // let url_1 = `https://newsdata.io/api/1/news?apikey=${this.API_KEY_1}&language=en&country=in&category=top`;
-        // let data_1 = await fetch(url_1);
-        // let parsedData_1 = await data_1.json();
-        // this.setState(
-        //   { 
-        //     articles_1: parsedData_1.results,
-        //     isLoading: false
-        //   }
-        // );
+        let url_1 = `https://newsdata.io/api/1/news?apikey=${this.API_KEY_1}&language=en&country=in&category=top`;
+        let data_1 = await fetch(url_1);
+        let parsedData_1 = await data_1.json();
         this.setState(
-          {
-            articles_1: articles_json.results,
+          { 
+            articles_1: parsedData_1.results,
             isLoading: false
           }
         );
+        // this.setState(
+        //   {
+        //     articles_1: articles_json.results,
+        //     isLoading: false
+        //   }
+        // );
       }
       catch (error) {
         console.error("Error fetching data:", error);
@@ -75,11 +72,11 @@ export default class News extends Component {
     const getArticles2 = async () => {
 
       try {
-        // let url_2 = `https://newsdata.io/api/1/news?apikey=${this.API_KEY_2}&language=en`;
-        // let data_2 = await fetch(url_2);
-        // let parsedData_2 = await data_2.json();
-        // this.setState({ articles_2: parsedData_2.results });
-        this.setState({ articles_2: articles_json.results });
+        let url_2 = `https://newsdata.io/api/1/news?apikey=${this.API_KEY_2}&language=en`;
+        let data_2 = await fetch(url_2);
+        let parsedData_2 = await data_2.json();
+        this.setState({ articles_2: parsedData_2.results });
+        // this.setState({ articles_2: articles_json.results });
       }
       catch (error) {
         console.error("Error fetching data:", error);
