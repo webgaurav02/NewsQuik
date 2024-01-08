@@ -1,0 +1,26 @@
+.news{
+    padding: 0 5%;
+}
+
+.top-headlines{
+    margin-top: 6%;
+    margin-bottom: 1%;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.top-head-right{
+    height: 100%;
+}
+
+.right-headlines{
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .top-head-right{
+        display: none;
+    }
+}

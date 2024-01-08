@@ -1,0 +1,96 @@
+.head-news{
+    height: 500px;
+    margin: 0 auto;
+}
+
+.rightnews-top{
+    height: 50%;
+}
+
+.rightnews-bottom{
+    height: 50%;
+}
+
+.news-div{
+    border: 1px solid white;
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.news-div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    backdrop-filter: blur(1px);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the last value (0.5) for the darkness level */
+    z-index: 1; /* Ensure the overlay is above the background image */
+}
+
+.news-div h3{
+    text-shadow: 2px 2px 8px #000000b6;
+}
+
+.news-div .text {
+    font-weight: 600;
+    position: relative;
+    z-index: 2; /* Ensure the text is above the overlay */
+    color: #fff; /* Set text color to white or any other color that contrasts with the overlay */
+}
+
+.news-div .text.source{
+    color: #d1d1d1;
+}   
+
+.source{
+    margin-bottom: 0;
+    color: #757575;
+}
+
+
+.lines-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lines-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 768px) {
+    .header-news{
+        min-height: 800px;
+    }
+    .head-news{
+        width: 100%;
+        margin: 0;
+    }
+
+    .header-news-left{
+        height: 200px;
+    }
+
+    .rightnews-top{
+        height: 200px;
+    }
+    
+    .rightnews-bottom{
+        height: 400px;
+    }
+
+}
