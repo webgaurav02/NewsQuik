@@ -40,7 +40,7 @@ export default class Navbar extends Component {
             {/* Time */}
             <div className="align-items-center">
               <span className="time nav-link active">
-                {`${currentDateTime.getHours() % 12}:${currentDateTime.getMinutes()} ${(currentDateTime.getHours()/12 === 0) ? 'AM' : 'PM' }`}
+                {`${((currentDateTime.getHours()%12)<10)?'0':''}${currentDateTime.getHours()%12}:${(currentDateTime.getMinutes()<10)?'0':''}${currentDateTime.getMinutes()} ${(currentDateTime.getHours()/12 === 0) ? 'AM' : 'PM' }`}
               </span>
             </div>
           </div>
