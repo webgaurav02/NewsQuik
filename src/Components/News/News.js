@@ -79,11 +79,19 @@ export default class News extends Component {
   }
 
   fetchMoreData = async () => {
-    console.log("Fetching more data...");
+    // console.log("Fetching more data...");
+    if (this.state.articles_1.length === this.state.resLength) {
+      this.setState(
+        {
+          isLoading: false,
+        }
+      )
+      return;
+    }
     let url = `https://newsdata.io/api/1/news?apikey=${this.API_KEY_2}&country=in&language=en&size=9&image=1${(this.state.query !== '') ? `&q=${this.state.query}` : ''}&page=${this.state.nextPage}`;
     let data = await fetch(url);
     let parsedData = await data.json();
-    console.log("API Response:", parsedData);
+    // console.log("API Response:", parsedData);
     setTimeout(() => {
       this.setState(
         {
@@ -94,7 +102,7 @@ export default class News extends Component {
           fetchCount: this.state.fetchCount + 1,
         }
       );
-      console.log(this.state.nextPage);
+      // console.log(this.state.nextPage);
     }, 500);
   }
 
@@ -190,7 +198,7 @@ export default class News extends Component {
         <InfiniteScroll
           dataLength={this.state.resLength}
           next={this.fetchMoreData}
-          hasMore={(this.state.fetchCount < this.state.maxFetchCount) && (this.state.articles_1.length < this.state.resLength)}
+          hasMore={(this.state.fetchCount < this.state.maxFetchCount)}
           loader={<span className="loader"></span>}
         >
           {/* {this.state.isLoading && <span className="loader"></span>} */}
