@@ -10,6 +10,20 @@ footer .container {
     margin: 0;
     min-width: 100%;
   }
+
+  .above-footer{
+    text-align: left;
+    padding: 50px;
+  }
+
+  .above-footer h4{
+    margin-top: 40px;
+    font-weight: 500;
+  }
+
+  .above-footer p{
+    font-weight: 200;
+  }
   
   .footer-content {
     padding: 0 2%;
