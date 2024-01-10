@@ -190,7 +190,7 @@ export default class News extends Component {
         <InfiniteScroll
           dataLength={this.state.resLength}
           next={this.fetchMoreData}
-          hasMore={this.state.fetchCount < this.state.maxFetchCount}
+          hasMore={(this.state.fetchCount < this.state.maxFetchCount) && (this.state.articles_1.length < this.state.resLength)}
           loader={<span className="loader"></span>}
         >
           {/* {this.state.isLoading && <span className="loader"></span>} */}
