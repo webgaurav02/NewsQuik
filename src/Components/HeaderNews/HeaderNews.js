@@ -13,7 +13,7 @@ export default class HeaderNews extends Component {
       <>
         <div className="container-fluid header-news" style={ {textAlign: 'left' }}>
           <div className="row head-news md-6">
-              <a href={articles[0].link} className="col-md-6 news-div header-news-left" style={ {backgroundImage: `url("${ (!articles[0].image_url)?'https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg':articles[0].image_url}")`, color: "white"}}>
+              <a href={articles[0].link} className="col-md-6 news-div header-news-left bg-primary" style={ {backgroundImage: `url("${ (!articles[0].image_url)?'https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg':articles[0].image_url}")`, color: "white"}}>
                 <div className="">
                   <p className="text source">{articles[0].source_id}</p>
                   <h3 className="lines-2 text">{articles[0].title}</h3>

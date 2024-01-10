@@ -24,3 +24,10 @@
     margin: 0 18px;
     font-weight: 700;
 }
+
+@media only screen and (max-width: 768px) {
+    .navbar .container-fluid{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

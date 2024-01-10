@@ -78,7 +78,7 @@
 
 @media only screen and (max-width: 768px) {
     .header-news{
-        min-height: 800px;
+        min-height: 1200px;
     }
     .head-news{
         width: 100%;
@@ -86,15 +86,15 @@
     }
 
     .header-news-left{
-        height: 200px;
+        height: 300px;
     }
 
     .rightnews-top{
-        height: 200px;
+        height: 300px;
     }
     
     .rightnews-bottom{
-        height: 400px;
+        height: 600px;
     }
 
 }
