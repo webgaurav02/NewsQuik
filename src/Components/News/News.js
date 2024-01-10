@@ -41,7 +41,7 @@ export default class News extends Component {
           isLoading: false,
           resLength: parsedData_1.totalResults,
           nextPage: parsedData_1.nextPage,
-          fetchCount: 0,
+          fetchCount: 1,
         }
       );
       // this.setState({ articles_2: articles_json.results });
@@ -54,6 +54,7 @@ export default class News extends Component {
 
 
   handleQuery = async () => {
+    this.setState({ isLoading: true });
     let text = document.getElementById("querySearch").value;
     let query = text.toLowerCase()
     this.setState({ isLoading: true });
@@ -68,7 +69,7 @@ export default class News extends Component {
           isLoading: false,
           resLength: parsedData_1.totalResults,
           nextPage: parsedData_1.nextPage,
-          fetchCount: 0,
+          fetchCount: 1,
         }
       );
       // this.setState({ articles_2: articles_json.results });
@@ -201,7 +202,7 @@ export default class News extends Component {
           hasMore={(this.state.fetchCount < this.state.maxFetchCount)}
           loader={<span className="loader"></span>}
         >
-          {/* {this.state.isLoading && <span className="loader"></span>} */}
+          {this.state.isLoading && <span className="loader"></span>}
           {!this.state.isLoading && <div className="container my-3 row">
             {this.state.articles_1.map((ele) => (
               <div key={ele.article_id} className="col-md-4">
