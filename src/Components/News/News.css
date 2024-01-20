@@ -122,4 +122,8 @@ li.category {
         margin: 0 auto;
     }
 
+    .infinite-scroll-component{
+        padding-left: 0;
+    }
+
 }
