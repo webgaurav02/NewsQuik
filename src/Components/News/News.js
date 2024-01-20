@@ -195,29 +195,28 @@ export default class News extends Component {
         </div>
         <hr />
 
-
-        <InfiniteScroll
-          dataLength={this.state.resLength}
-          next={this.fetchMoreData}
-          hasMore={(this.state.fetchCount < this.state.maxFetchCount)}
-          loader={<span className="loader"></span>}
-        >
-          {this.state.isLoading && <span className="loader"></span>}
-          {!this.state.isLoading && <div className="container my-3 row">
-            {this.state.articles_1.map((ele) => (
-              <div key={ele.article_id} className="col-md-4">
-                <NewsItem
-                  title={ele.title}
-                  description={ele.content}
-                  imageUrl={!ele.image_url ? "https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg" : ele.image_url}
-                  newsUrl={ele.link}
-                  sourceId={ele.source_id}
-                />
-              </div>
-            ))}
-          </div>}
-        </InfiniteScroll>
-
+        <div className="news-items">
+          <InfiniteScroll
+            dataLength={this.state.resLength}
+            next={this.fetchMoreData}
+            hasMore={(this.state.fetchCount < this.state.maxFetchCount)}
+            loader={<span className="loader"></span>}
+          >
+            {this.state.isLoading && <span className="loader"></span>}
+            {!this.state.isLoading && <div className="container my-3 row">
+              {this.state.articles_1.map((ele) => (
+                <div key={ele.article_id} className="col-md-4">
+                  <NewsItem
+                    title={ele.title}
+                    imageUrl={!ele.image_url ? "https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg" : ele.image_url}
+                    newsUrl={ele.link}
+                    sourceId={ele.source_id}
+                  />
+                </div>
+              ))}
+            </div>}
+          </InfiniteScroll>
+        </div>
 
 
 

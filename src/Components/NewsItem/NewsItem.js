@@ -4,7 +4,7 @@ import "./NewsItem.css";
 export default class NewsItem extends Component {
 
   render() {
-    let { title, description, imageUrl, newsUrl, sourceId } = this.props;
+    let { title, imageUrl, newsUrl, sourceId } = this.props;
 
     return (
       <div className="card my-3">
@@ -20,11 +20,8 @@ export default class NewsItem extends Component {
           />
           <div className="card-body">
             <p className="source">{sourceId}</p>
-            <div className="lines-2">
+            <div className="lines-3">
               <h5 className="card-title">{title}...</h5>
-            </div>
-            <div className="lines-2">
-              <p className="card-text">{description}...</p>
             </div>
           </div>
         </a>

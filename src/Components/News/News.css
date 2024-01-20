@@ -52,6 +52,12 @@ li.category {
 }
 
 
+.infinite-scroll-component{
+    text-align: center;
+    padding-left: 25px;
+}
+
+
 .loader {
     margin: 10% 0 10%;
     width: 48px;
